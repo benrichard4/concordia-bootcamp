@@ -1,14 +1,7 @@
-import { useContext } from "react";
-import { StoreContext } from "../../contexts/Store";
 import Container from "../Container";
 import ArticleGrid from "./ArticleGrid";
 import FeaturedArticle from "./FeaturedArticle";
-import {
-  ArticleGridContainer,
-  BlogTitle,
-  Divider,
-  LoadMoreButton,
-} from "./styled-components";
+import { BlogTitle, Divider } from "./styled-components";
 
 //Homepage component renders each item on homepage
 function Homepage() {

@@ -1,5 +1,4 @@
 import GlobalStyle from "./base-styles";
-import { useStore } from "./contexts/Store";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./components/Header";
