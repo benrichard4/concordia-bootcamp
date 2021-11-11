@@ -1,29 +1,32 @@
 import GlobalStyle from "./base-styles";
 import { useStore } from "./contexts/Store";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Container from "./components/Container";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Homepage from "./components/Homepage";
 
 function App() {
-  const store = useStore();
-
-  console.log("TODO: use the store to create the base UI", store);
+  //console.log("TODO: use the store to create the base UI", store);
 
   return (
-    <>
+    <Router>
       <GlobalStyle />
       <main className="App">
         <Header />
-
-        {/* TODO: Blog things goes here. Use the components folder! */}
-        <Container>
-          <h1>Hello 🌎</h1>
-        </Container>
+        <Switch>
+          <Route exact path="/">
+            <Homepage />
+          </Route>
+          {/* ArticlePage below not built but it would show all the articles  */}
+          {/* <Route path="/article/:articleId">
+            <ArticlePage />
+          </Route> */}
+        </Switch>
 
         <Footer />
       </main>
-    </>
+    </Router>
   );
 }
 

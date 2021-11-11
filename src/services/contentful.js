@@ -14,6 +14,19 @@ export const getAllArticles = async () => {
   }
 };
 
+//function that queries for limit and skip to only display 6 articles on a page, until load more is clicked.
+export const getPaginatedArticles = async (limit, skip) => {
+  //new variable for url with quries concatenated to the end, taking in limit and skip
+  const QUERYURL = CONTENTFUL_URL.concat(`&limit=${limit}&skip=${skip}`);
+  console.log(QUERYURL);
+  try {
+    const response = await request(GET, QUERYURL);
+
+    return response.items;
+  } catch (e) {
+    console.log("getAllArticles failed:", e);
+  }
+};
 // TODO: Using the category argument, update the method below by making a GET
 //       request and returning entries from contentful filtered by the category.
 //       NOTE: this method will need to be connected to ../contexts/Store!
